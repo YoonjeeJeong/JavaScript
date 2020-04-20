@@ -5,15 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rockpaperscissors</title>
     <style>
-    #tb {
-        border: 1px; border-color: black;
-        padding: 2px;
-    }
-
+    
     </style>
 </head>
 
 <body>
+    <script>
+        /*
+        img태그의 src속성과 width속성을 동적으로 변경하면 
+        쇼핑몰과 같이 이미지 변경이 가능하다 
+        */
+        function fnChangeImg(imgNum){
+            var img_tag = document.getElementsByName("rpc");
+            img_tag.src = "./images/" + imgNum + ".jpg";
+        }
+
+        //여기부터 하기
+        function rockPaper() {
+        var computer;
+        var player;
+        var gameplay = [1,2,3];
+        var index = 0;
+        
+        while(index<4){
+            var randomNum = parseInt(Math.random()*3)+ 1;//1-3사이 난수생성
+            for(var i=0 ; i<gameplay.length ; i++){
+                    /*  아래: 배열에 저장된 요소와 난수를 비교하여 중복이 확인되면
+                    flag로 true로 변경한다  */
+                    if(gameplay[i]==computer){
+                        flag = true;
+                        break;//중복값이 확인됨 즉시 루프 탈출
+                    }
+                }
+        }
+    }
+
+    </script>
+    <!--
+    <h2>Lotto(1~45) 번호 생성하기</h2>
+    <button type="button" onclick="getLotto();">
+        로또번호생성하기
+    </button>
+    span#lottoNumber
+    <span id="lottoNumber" style="font-size:2em; color:red;">
+        생성된 로또번호는 여기에 출력됩니다.
+    </span> -->
+
+    <h2>동적으로 이미지 교체하기(ID로 DOM객체얻기)</h2>
+    <fieldset>
+        <legend>이미지 동적 교체</legend>
+            <img class="rpc" src="./images/rock.jpg" alt="rock">1번 이미지</a>
+            <img class="rpc" src="./images/paper.jpg" alt="paper">2번 이미지</a>
+            <img class="rpc" src="./images/scissors.jpg" alt="scissor">3번 이미지</a>
+            <hr/>
+    </fieldset>
+
+    <script>
     <tb id="tb">
         <tr>
             <td style="border-color: black; border: 2px;">컴퓨터</td>
@@ -31,6 +78,9 @@
             <td colspan="2"></td>
         </tr>
     </tb>
+    </script>
+    
+    
     
 </body>
 </html>
