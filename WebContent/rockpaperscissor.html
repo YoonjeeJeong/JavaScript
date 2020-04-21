@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rockpaperscissors</title>
+    
+</head>
+
+<body>
+
+    <script>
+        window.onload = function(){
+            comImg = document.getElementById("com");
+            userImg = document.getElementById("user");
+            result = document.getElementById("result");
+        }
+        function gameStart(user){
+            //1-3사이의 난수
+            var com = parseInt(Math.random()*3)+1;
+
+            if(com==1) comImg.src = "../images/scissors.jpg";
+            if(com==2) comImg.src = "../images/rock.jpg";
+            if(com==3) comImg.src = "../images/paper.jpg";
+
+            switch(user - com){
+                case 0:
+                    console.log("비김");
+                    result.innerText = "비김";
+                break;
+                case 1: case -2:
+                    console.log("이겼습니다");
+                    result.innerText = "이겼습니다";
+                    break;
+                case 2: case -1:
+                    console.
+            }
+        }
+
+        function changeImage(){
+            //배열선언
+            // var imageArr = new Array("scissors.jpg", "rock.jpg", "paper.jpg");
+            document.scissor.src = "sciccors.jpg";
+        }
+    </script>
+
+    <table style="border: 1px; padding: 2px; border-color: black; text-align: left;">
+        <tr>
+            <td style="text-align: left; color: black;">컴퓨터</td>
+            <td style="text-align: left; color: black;">나</td>
+        </tr>
+        <tr>
+            <td>
+                <img name="start" src="./images/start.png" width="220" height="220">
+            </td>
+            <td>
+                <img name="me" src="./images/start.png" width="220" height="220">
+            </td>
+        </tr>
+        <tr style="height: 10px;">
+            <td colspan="2"></td>
+        </tr>
+
+    </table>
+    <button onclick="gameStart(1);">가위</button>
+    <button onclick="gameStart(2);">가위</button>
+    <button onclick="gameStart(3);">가위</button>
+</body>
+</html>
